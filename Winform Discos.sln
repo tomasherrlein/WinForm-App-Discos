@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35521.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscosApp", "DiscosApp\DiscosApp.csproj", "{588D6E75-01BD-4985-BAE3-F35FC25A8D68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{66A7AD4B-F11F-4898-BD57-1B680A9930D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{F95EE52B-B6FE-4DA3-A306-F3547E7A93FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{588D6E75-01BD-4985-BAE3-F35FC25A8D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588D6E75-01BD-4985-BAE3-F35FC25A8D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588D6E75-01BD-4985-BAE3-F35FC25A8D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588D6E75-01BD-4985-BAE3-F35FC25A8D68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66A7AD4B-F11F-4898-BD57-1B680A9930D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66A7AD4B-F11F-4898-BD57-1B680A9930D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66A7AD4B-F11F-4898-BD57-1B680A9930D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66A7AD4B-F11F-4898-BD57-1B680A9930D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F95EE52B-B6FE-4DA3-A306-F3547E7A93FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F95EE52B-B6FE-4DA3-A306-F3547E7A93FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F95EE52B-B6FE-4DA3-A306-F3547E7A93FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F95EE52B-B6FE-4DA3-A306-F3547E7A93FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
