@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAgregarDisco.cs">
+    <Compile Include="FrmEjecutarAccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAgregarDisco.Designer.cs">
-      <DependentUpon>FrmAgregarDisco.cs</DependentUpon>
+    <Compile Include="FrmEjecutarAccion.Designer.cs">
+      <DependentUpon>FrmEjecutarAccion.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDisco.cs">
       <SubType>Form</SubType>
@@ -60,8 +60,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAgregarDisco.resx">
-      <DependentUpon>FrmAgregarDisco.cs</DependentUpon>
+    <EmbeddedResource Include="FrmEjecutarAccion.resx">
+      <DependentUpon>FrmEjecutarAccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDisco.resx">
       <DependentUpon>FrmDisco.cs</DependentUpon>

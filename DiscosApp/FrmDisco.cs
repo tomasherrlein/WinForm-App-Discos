@@ -40,7 +40,7 @@ namespace ejemplo_ado_net
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -65,8 +65,17 @@ namespace ejemplo_ado_net
 
         private void btnAgregarDisco_Click(object sender, EventArgs e)
         {
-            FrmAgregarDisco ventanaAgregar = new FrmAgregarDisco();
+            FrmEjecutarAccion ventanaAgregar = new FrmEjecutarAccion();
             ventanaAgregar.ShowDialog();
+            CargarDgv();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Disco disco = (Disco)dgvDiscos.CurrentRow.DataBoundItem;
+            FrmEjecutarAccion ventanaModificar = new FrmEjecutarAccion(disco);
+            ventanaModificar.Text = "Modificar disco";
+            ventanaModificar.ShowDialog();
             CargarDgv();
         }
     }

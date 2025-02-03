@@ -1,6 +1,6 @@
 ﻿namespace DiscosApp
 {
-    partial class FrmAgregarDisco
+    partial class FrmEjecutarAccion
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblFechaLanzamiento = new System.Windows.Forms.Label();
             this.lblCantidadCanciones = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtbTitulo = new System.Windows.Forms.TextBox();
             this.txtbCantidadCanciones = new System.Windows.Forms.TextBox();
@@ -74,15 +74,15 @@
             this.lblCantidadCanciones.TabIndex = 2;
             this.lblCantidadCanciones.Text = "Cantidad de canciones";
             // 
-            // btnAgregar
+            // btnAceptar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(103, 342);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(98, 39);
-            this.btnAgregar.TabIndex = 4;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAceptar.Location = new System.Drawing.Point(103, 342);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(98, 39);
+            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -181,14 +181,14 @@
             // pboxUrlImagen
             // 
             this.pboxUrlImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pboxUrlImagen.Location = new System.Drawing.Point(452, 97);
+            this.pboxUrlImagen.Location = new System.Drawing.Point(441, 97);
             this.pboxUrlImagen.Name = "pboxUrlImagen";
             this.pboxUrlImagen.Size = new System.Drawing.Size(242, 200);
             this.pboxUrlImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxUrlImagen.TabIndex = 17;
             this.pboxUrlImagen.TabStop = false;
             // 
-            // FrmAgregarDisco
+            // FrmEjecutarAccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -205,12 +205,12 @@
             this.Controls.Add(this.txtbCantidadCanciones);
             this.Controls.Add(this.txtbTitulo);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblCantidadCanciones);
             this.Controls.Add(this.lblFechaLanzamiento);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FrmAgregarDisco";
+            this.Name = "FrmEjecutarAccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo disco";
             this.Load += new System.EventHandler(this.FrmAgregarDisco_Load);
@@ -225,7 +225,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFechaLanzamiento;
         private System.Windows.Forms.Label lblCantidadCanciones;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtbTitulo;
         private System.Windows.Forms.TextBox txtbCantidadCanciones;
