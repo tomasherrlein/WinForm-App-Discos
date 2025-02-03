@@ -43,7 +43,7 @@ namespace DiscosApp
                 disco.FechaLanzamiento = dtpFechaLanzamiento.Value;
                 disco.UrlImagen = txtbUrlImagen.Text;
                 disco.Estilo = (DatoDisco)cboxEstilo.SelectedItem;
-                disco.Edicion = (DatoDisco)cboxEstilo.SelectedItem;
+                disco.Edicion = (DatoDisco)cboxEdicion.SelectedItem;
 
                 DiscoNegocio negocio = new DiscoNegocio();
                 if (disco == null)
