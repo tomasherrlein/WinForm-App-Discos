@@ -72,11 +72,39 @@ namespace ejemplo_ado_net
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Disco disco = (Disco)dgvDiscos.CurrentRow.DataBoundItem;
-            FrmEjecutarAccion ventanaModificar = new FrmEjecutarAccion(disco);
+            Disco discoSeleccionado = (Disco)dgvDiscos.CurrentRow.DataBoundItem;
+            FrmEjecutarAccion ventanaModificar = new FrmEjecutarAccion(discoSeleccionado);
             ventanaModificar.Text = "Modificar disco";
             ventanaModificar.ShowDialog();
             CargarDgv();
+        }
+
+        private void btnEliminacionFisica_Click(object sender, EventArgs e)
+        {
+            Eliminar(logico: false);
+        }
+
+        private void btnEliminacionLogica_Click(object sender, EventArgs e)
+        {
+            Eliminar(logico: true);
+        }
+
+        public void Eliminar (bool logico = true)
+        {
+            DialogResult respuesta = MessageBox.Show("Estas seguro de que queres eliminar el disco?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                Disco discoSeleccionado = (Disco)dgvDiscos.CurrentRow.DataBoundItem;
+                DiscoNegocio negocio = new DiscoNegocio();
+
+                if (logico)
+                    negocio.EliminarLogico(discoSeleccionado.Id);
+                else
+                    negocio.EliminarFisico(discoSeleccionado.Id);
+
+                CargarDgv();
+            }
         }
     }
 }

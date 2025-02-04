@@ -46,15 +46,15 @@ namespace DiscosApp
                 disco.Edicion = (DatoDisco)cboxEdicion.SelectedItem;
 
                 DiscoNegocio negocio = new DiscoNegocio();
-                if (disco == null)
-                {
-                    negocio.Agregar(disco);
-                    MessageBox.Show("Disco ingresado correctamente");
-                }
-                else
+                if (disco.Id != 0)
                 {
                     negocio.Modificar(disco);
                     MessageBox.Show("Disco modificado correctamente");
+                }
+                else
+                {
+                    negocio.Agregar(disco);
+                    MessageBox.Show("Disco ingresado correctamente");
                 }
                 Close();
             }

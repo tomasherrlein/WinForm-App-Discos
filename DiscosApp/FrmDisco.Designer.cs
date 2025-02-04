@@ -32,6 +32,8 @@
             this.dgvDiscos = new System.Windows.Forms.DataGridView();
             this.btnAgregarDisco = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminacionFisica = new System.Windows.Forms.Button();
+            this.btnEliminacionLogica = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             this.SuspendLayout();
@@ -77,11 +79,33 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // btnEliminacionFisica
+            // 
+            this.btnEliminacionFisica.Location = new System.Drawing.Point(278, 396);
+            this.btnEliminacionFisica.Name = "btnEliminacionFisica";
+            this.btnEliminacionFisica.Size = new System.Drawing.Size(140, 33);
+            this.btnEliminacionFisica.TabIndex = 4;
+            this.btnEliminacionFisica.Text = "Eliminar fisico";
+            this.btnEliminacionFisica.UseVisualStyleBackColor = true;
+            this.btnEliminacionFisica.Click += new System.EventHandler(this.btnEliminacionFisica_Click);
+            // 
+            // btnEliminacionLogica
+            // 
+            this.btnEliminacionLogica.Location = new System.Drawing.Point(436, 396);
+            this.btnEliminacionLogica.Name = "btnEliminacionLogica";
+            this.btnEliminacionLogica.Size = new System.Drawing.Size(140, 33);
+            this.btnEliminacionLogica.TabIndex = 5;
+            this.btnEliminacionLogica.Text = "Eliminar logico";
+            this.btnEliminacionLogica.UseVisualStyleBackColor = true;
+            this.btnEliminacionLogica.Click += new System.EventHandler(this.btnEliminacionLogica_Click);
+            // 
             // FrmDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1254, 454);
+            this.Controls.Add(this.btnEliminacionLogica);
+            this.Controls.Add(this.btnEliminacionFisica);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregarDisco);
             this.Controls.Add(this.dgvDiscos);
@@ -101,5 +125,7 @@
         private System.Windows.Forms.DataGridView dgvDiscos;
         private System.Windows.Forms.Button btnAgregarDisco;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminacionFisica;
+        private System.Windows.Forms.Button btnEliminacionLogica;
     }
 }
