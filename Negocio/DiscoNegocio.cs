@@ -143,5 +143,109 @@ namespace Negocio
             }
         }
 
+        public List<Disco> Filtrar(string campo, string criterio, string filtro)
+        {
+            List<Disco> discos = new List<Disco>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                string consulta = "SELECT D.Id, D.Titulo, D.FechaLanzamiento, D.CantidadCanciones, E.Descripcion AS Genero, D.UrlImagenTapa, T.Descripcion AS Edicion, D.IdEstilo, D.IdTipoEdicion FROM DISCOS D, ESTILOS E, TIPOSEDICION T WHERE D.IdEstilo = E.Id AND D.IdTipoEdicion = T.Id AND Activo = 1 AND ";
+
+                switch (campo)
+                {
+                    case "Titulo":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "D.Titulo LIKE @filtro";
+                                break;
+                            case "Termina con":
+                                consulta += "D.Titulo LIKE @filtro";
+                                break;
+                            case "Contiene":
+                                consulta += "D.Titulo LIKE @filtro";
+                                break;
+                        }
+                        break;
+
+                    case "Estilo":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "Genero LIKE @filtro";
+                                break;
+                            case "Termina con":
+                                consulta += "Genero LIKE @filtro";
+                                break;
+                            case "Contiene":
+                                consulta += "Genero LIKE @filtro";
+                                break;
+                        }
+                        break;
+
+                    case "Edicion":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "Edicion LIKE @filtro";
+                                break;
+                            case "Termina con":
+                                consulta += "Edicion LIKE @filtro";
+                                break;
+                            case "Contiene":
+                                consulta += "Edicion LIKE @filtro";
+                                break;
+                        }
+                        break;
+                    case "Cantidad de canciones":
+                        switch (criterio)
+                        {
+                            case "Mayor a":
+                                consulta += "D.CantidadCanciones > @filtro";
+                                break;
+                            case "Menor a":
+                                consulta += "D.CantidadCanciones < @filtro";
+                                break;
+                            case "Igual a":
+                                consulta += "D.CantidadCanciones = @filtro";
+                                break;
+                        }
+                        break;
+                }
+
+                datos.SetearConsulta(consulta);
+                datos.SetearParametro("@filtro", filtro);
+                datos.EjecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Disco aux = new Disco();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Titulo = (string)datos.Lector["Titulo"];
+                    aux.FechaLanzamiento = (DateTime)datos.Lector["FechaLanzamiento"];
+                    aux.CantidadCanciones = (int)datos.Lector["CantidadCanciones"];
+
+                    if (!(datos.Lector["UrlImagenTapa"] is DBNull))
+                        aux.UrlImagen = (string)datos.Lector["UrlImagenTapa"];
+
+                    aux.Estilo = new DatoDisco();
+                    aux.Estilo.Id = (int)datos.Lector["IdEstilo"];
+                    aux.Estilo.Descripcion = (string)datos.Lector["Genero"];
+                    aux.Edicion = new DatoDisco();
+                    aux.Edicion.Id = (int)datos.Lector["IdTipoEdicion"];
+                    aux.Edicion.Descripcion = (string)datos.Lector["Edicion"];
+
+                    discos.Add(aux);
+                }
+
+                datos.CerrarConexion();
+
+                return discos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
