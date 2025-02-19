@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 using Dominio;
+using System.IO;
 
 namespace DiscosApp
 {
     public partial class FrmEjecutarAccion : Form
     {
         private Disco disco = null;
+        private OpenFileDialog archivo = null;
+        private string rutaImagenes = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Imagenes");
         public FrmEjecutarAccion()
         {
             InitializeComponent();
@@ -35,6 +38,15 @@ namespace DiscosApp
         {
             try
             {
+
+                //Guardo imagen localmente en carpeta "Imagenes"
+                if (archivo != null && !txtbUrlImagen.Text.ToLower().Contains("http"))
+                {
+                    string rutaImagen = Path.Combine(rutaImagenes, archivo.SafeFileName);
+                    File.Copy(archivo.FileName, rutaImagen, true);
+                    txtbUrlImagen.Text = rutaImagen;
+                }
+
                 if (disco == null)
                     disco = new Disco();
 
@@ -44,6 +56,9 @@ namespace DiscosApp
                 disco.UrlImagen = txtbUrlImagen.Text;
                 disco.Estilo = (DatoDisco)cboxEstilo.SelectedItem;
                 disco.Edicion = (DatoDisco)cboxEdicion.SelectedItem;
+
+
+                
 
                 DiscoNegocio negocio = new DiscoNegocio();
                 if (disco.Id != 0)
@@ -94,6 +109,10 @@ namespace DiscosApp
                     cboxEdicion.SelectedValue = disco.Edicion.Id;
                 }
 
+                //Crea la carpeta "Imagenes" si no existe
+                if (!Directory.Exists(rutaImagenes))
+                    Directory.CreateDirectory(rutaImagenes);
+
             }
             catch (Exception ex)
             {
@@ -116,6 +135,18 @@ namespace DiscosApp
             catch (Exception ex)
             {
                 pboxUrlImagen.Load("https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg");
+            }
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            string rutaImagenes = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Imagenes");
+            archivo = new OpenFileDialog();
+            archivo.Filter = "Imágenes (*.jpg, *.png)|*.jpg;*.png";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtbUrlImagen.Text = archivo.FileName;
+                CargarImagen(archivo.FileName);
             }
         }
     }

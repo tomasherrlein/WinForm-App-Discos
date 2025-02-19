@@ -44,6 +44,7 @@
             this.txtbUrlImagen = new System.Windows.Forms.TextBox();
             this.lblUrlImagen = new System.Windows.Forms.Label();
             this.pboxUrlImagen = new System.Windows.Forms.PictureBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboxUrlImagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,18 +182,29 @@
             // pboxUrlImagen
             // 
             this.pboxUrlImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pboxUrlImagen.Location = new System.Drawing.Point(441, 97);
+            this.pboxUrlImagen.Location = new System.Drawing.Point(458, 97);
             this.pboxUrlImagen.Name = "pboxUrlImagen";
             this.pboxUrlImagen.Size = new System.Drawing.Size(242, 200);
             this.pboxUrlImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxUrlImagen.TabIndex = 17;
             this.pboxUrlImagen.TabStop = false;
             // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Location = new System.Drawing.Point(411, 204);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(25, 20);
+            this.btnAgregarImagen.TabIndex = 18;
+            this.btnAgregarImagen.Text = "+";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
+            // 
             // FrmEjecutarAccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 408);
+            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.pboxUrlImagen);
             this.Controls.Add(this.txtbUrlImagen);
             this.Controls.Add(this.lblUrlImagen);
@@ -238,5 +250,6 @@
         private System.Windows.Forms.TextBox txtbUrlImagen;
         private System.Windows.Forms.Label lblUrlImagen;
         private System.Windows.Forms.PictureBox pboxUrlImagen;
+        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }
